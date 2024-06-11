@@ -1,15 +1,13 @@
 import React from 'react';
+import LeftMainComponent from './Component/LeftMainComponent';
+import "./main.css";
 
 function App() {
 
-  const add=(a:number,b:number)=>{
-    return a+b;
-  }
-
   return (
     <div className="App">
-      <h3>My Portfolio</h3>
-      Sum of two numbers is {add(2,3)}
+      <h3 className='portfolio'>My Portfolio</h3>
+      <LeftMainComponent />
     </div>
   );
 }
