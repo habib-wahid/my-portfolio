@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="App">
-      <h3 className='portfolio'>My Portfolio</h3>
+      <h3 className='portfolio'>MD Habibur Rahman</h3>
       <LeftMainComponent />
     </div>
   );
