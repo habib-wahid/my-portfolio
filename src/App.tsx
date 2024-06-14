@@ -1,7 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import { HeaderContainer, TitleComponent, Title, IconComponent, BodyContainer, AboutContainerStyled, DetailsContainerStyled, ProfileImageComponentStyled, NameTextComponentStyled, CareerTextComponentStyled, SocialMediaComponentStyled, FacebookImageStyled, LinkedInImageStyled, TwiterImageStyled, GitHubImageStyled, StyledLink } from "./styled/header";
+import { HeaderContainer, TitleComponent, Title, IconComponent, BodyContainer, AboutContainerStyled, 
+  DetailsContainerStyled, ProfileImageComponentStyled, NameTextComponentStyled, CareerTextComponentStyled,
+   SocialMediaComponentStyled, FacebookImageStyled, LinkedInImageStyled, TwiterImageStyled,
+    GitHubImageStyled, StyledLink, GeneralDetailsStyled,
+     PhoneNumberContainerStyled, 
+     GeneralPlaceHolderTextStyled,
+     GeneralDetailsTextStyled,
+     InfoDetailsContainerStyled,
+     InfoImageStyled,
+     HorizontalLineStyled} from "./styled/header";
 import MoonIcon from "./assets/MoonIcon";
+import { useTranslation } from "react-i18next";
+import { resources } from "./resource";
+import { generalDetails } from "./data/GeneralDetails";
 
 const BackgroudColorWrapper = styled.div`
   background-color: #EBF2FA;
@@ -14,14 +26,14 @@ const MainContentWrapper = styled.div`
     margin: 0px 100px 0px 100px;
 `
 function App() {
-
+  const {t} = useTranslation();
   return (
    <BackgroudColorWrapper>
     <MainContentWrapper>
       <HeaderContainer>
         <TitleComponent>
           <Title>
-            MD Habibur Rahman
+            {t(resources.en.translation.title)}
           </Title>
         </TitleComponent>
         <IconComponent>
@@ -32,9 +44,9 @@ function App() {
         <AboutContainerStyled>
         <ProfileImageComponentStyled src = "/images/profile.jpg" />
         <NameTextComponentStyled>
-          Md Habibur Rahman
+          {t(resources.en.translation.title)}
         </NameTextComponentStyled>
-        <CareerTextComponentStyled>FullStack Software Engineer</CareerTextComponentStyled>
+        <CareerTextComponentStyled>{t(resources.en.translation.profession)}</CareerTextComponentStyled>
         <SocialMediaComponentStyled>
           <StyledLink href="https://www.facebook.com/mdhabib.mdhabib.733" target="_blank">
             <FacebookImageStyled src = "/images/Facebook.png" />
@@ -49,6 +61,23 @@ function App() {
             <GitHubImageStyled src = "/images/Github.png" />
           </StyledLink>
         </SocialMediaComponentStyled>
+        <GeneralDetailsStyled>
+          {generalDetails.map((el) => 
+          <>
+           <InfoDetailsContainerStyled>
+            <InfoImageStyled src = {el.iconSrc}/>
+            <PhoneNumberContainerStyled>
+              <GeneralPlaceHolderTextStyled>{el.placeHolder}</GeneralPlaceHolderTextStyled>
+              <GeneralDetailsTextStyled>{el.value}</GeneralDetailsTextStyled>
+            </PhoneNumberContainerStyled>
+          </InfoDetailsContainerStyled>
+          <HorizontalLineStyled />
+          </>
+          )}
+        </GeneralDetailsStyled>
+        <div>
+          dsfsdf
+        </div>
         </AboutContainerStyled>
         <DetailsContainerStyled>
           <h3>About Me</h3>

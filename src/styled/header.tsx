@@ -61,6 +61,7 @@ export const CareerTextComponentStyled = styled.text`
 export const SocialMediaComponentStyled = styled.div`
     display: flex;
     justify-content: space-around;
+    margin: 10px 0;
 `
 
 export const StyledLink = styled.a`
@@ -118,4 +119,52 @@ export const GitHubImageStyled = styled.img`
   &:hover {
     transform: scale(1.1);
   }
+`
+
+export const GeneralDetailsStyled = styled.div`
+  background-color: #F2F5F9;
+  width: 350px;
+  height: auto;
+  border-radius: 10px;
+  /* margin-top: 20px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
+export const InfoDetailsContainerStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-top: 10px;
+`
+
+export const InfoImageStyled = styled.img`
+margin-left: 10px;
+  margin-right: 30px;
+  height: 20px;
+  width: 20px;
+`
+
+export const PhoneNumberContainerStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const GeneralPlaceHolderTextStyled = styled.text`
+  color: gray;
+  font-size: 15px;
+  opacity: 1;
+`
+
+export const GeneralDetailsTextStyled = styled.text`
+  font-weight: 500;
+  letter-spacing: .1px;
+`
+
+export const HorizontalLineStyled = styled.hr`
+  border: 1px solid gray;
+  border-radius: 1px;
+  margin: 10px auto;
+  width: 75%;
 `
