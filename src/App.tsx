@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { HeaderContainer, TitleComponent, Title, IconComponent, BodyContainer, AboutContainerStyled, 
   DetailsContainerStyled, ProfileImageComponentStyled, NameTextComponentStyled, CareerTextComponentStyled,
@@ -13,7 +13,9 @@ import { HeaderContainer, TitleComponent, Title, IconComponent, BodyContainer, A
 import MoonIcon from "./assets/MoonIcon";
 import { useTranslation } from "react-i18next";
 import { resources } from "./resource";
-import { generalDetails } from "./data/GeneralDetails";
+import { MenuImages, generalDetails } from "./data/GeneralDetails";
+import { ButtonImage, MenuButton, MenuComponentStyled, MenuContainerStyled } from "./styled/menu";
+import { AboutMeLineStyled, AboutMeTextStyled, CareerObjectiveSectionStyled, DetailsContentStyled, WhatIDoContainerStyled, WhatIDoDivStyled, WhatIDoTextStyled } from "./styled/about";
 
 const BackgroudColorWrapper = styled.div`
   background-color: #EBF2FA;
@@ -27,6 +29,12 @@ const MainContentWrapper = styled.div`
 `
 function App() {
   const {t} = useTranslation();
+  const [activeButton, setActiveButton] = useState(1);
+
+  const handleClick = (el:any) => {
+    console.log("button ", el);
+    setActiveButton(el.id)
+  }
   return (
    <BackgroudColorWrapper>
     <MainContentWrapper>
@@ -75,12 +83,38 @@ function App() {
           </>
           )}
         </GeneralDetailsStyled>
-        <div>
-          dsfsdf
-        </div>
         </AboutContainerStyled>
         <DetailsContainerStyled>
-          <h3>About Me</h3>
+          <MenuContainerStyled>
+            <MenuComponentStyled>
+              {
+                MenuImages.map((el) => 
+                <MenuButton 
+                key={el.id} 
+                onClick={() => handleClick(el)}
+                >
+                  <ButtonImage src = {activeButton == el.id ? el.activeSrc : el.src} />
+                </MenuButton>
+                )
+              }
+            </MenuComponentStyled>
+          </MenuContainerStyled>
+          <DetailsContentStyled>
+            <AboutMeTextStyled>{resources.en.translation.aboutme}</AboutMeTextStyled>
+            <AboutMeLineStyled />
+            <br/>
+            <CareerObjectiveSectionStyled>
+              {resources.en.translation.careerObjective}
+            </CareerObjectiveSectionStyled>
+            <WhatIDoTextStyled>
+              {resources.en.translation.whatIDo} <br/>
+            </WhatIDoTextStyled>
+            <WhatIDoContainerStyled>
+              <WhatIDoDivStyled>
+                Web Development
+              </WhatIDoDivStyled>
+            </WhatIDoContainerStyled>
+          </DetailsContentStyled>
         </DetailsContainerStyled>
       </BodyContainer>
     </MainContentWrapper>

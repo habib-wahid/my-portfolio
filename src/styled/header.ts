@@ -4,11 +4,16 @@ export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 10px 0px 50px 0;
 `
 
-export const TitleComponent = styled.div``
+export const TitleComponent = styled.div`
+  margin-bottom: 60px;
+`
 
-export const IconComponent = styled.div``
+export const IconComponent = styled.div`
+  margin-bottom: 60px;
+`
 
 export const Title = styled.h3`
     color: #ED250A;
@@ -17,7 +22,6 @@ export const Title = styled.h3`
 export const BodyContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-top: 50px;
 `
 
@@ -26,21 +30,23 @@ export const AboutContainerStyled = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 30%;
     background-color: white;
     border-radius: 10px;
 `
 
 export const DetailsContainerStyled = styled.div`
-    width: 900px;
+    width: 66%;
     background-color: white;
-    align-items: left;
+    display: flex;
+    flex-direction: column;
 `
 
 export const ProfileImageComponentStyled = styled.img`
-    margin-top: -50px;
+    position: relative;
+    margin-top: -90px;
     width: 150px;
-    height: auto;
+    height: 150px;
     border-radius: 10%;
 `
 
