@@ -93,7 +93,7 @@ function App() {
                 key={el.id} 
                 onClick={() => handleClick(el)}
                 >
-                  <ButtonImage src = {activeButton == el.id ? el.activeSrc : el.src} />
+                  <ButtonImage src = {activeButton === el.id ? el.activeSrc : el.src} />
                 </MenuButton>
                 )
               }
