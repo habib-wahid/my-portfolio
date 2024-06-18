@@ -16,7 +16,8 @@ export const IconComponent = styled.div`
 `
 
 export const Title = styled.h3`
-    color: #ED250A;
+    color: #EC1B09;
+    font-style: oblique;
 `
 
 export const BodyContainer = styled.div`

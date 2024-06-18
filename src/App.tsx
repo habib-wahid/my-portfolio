@@ -13,14 +13,14 @@ import { HeaderContainer, TitleComponent, Title, IconComponent, BodyContainer, A
 import MoonIcon from "./assets/MoonIcon";
 import { useTranslation } from "react-i18next";
 import { resources } from "./resource";
-import { MenuImages, generalDetails } from "./data/GeneralDetails";
+import { MenuImages, generalDetails, stacks } from "./data/GeneralDetails";
 import { ButtonImage, MenuButton, MenuComponentStyled, MenuContainerStyled } from "./styled/menu";
-import { AboutMeLineStyled, AboutMeTextStyled, CareerObjectiveSectionStyled, DetailsContentStyled, WhatIDoContainerStyled, WhatIDoDivStyled, WhatIDoTextStyled } from "./styled/about";
+import { AboutMeLineStyled, AboutMeTextStyled, CareerObjectiveSectionStyled, DetailsContentStyled, StackDetailsStyled, StackIconStyled, StackTitleStyled, WhatIDoContainerStyled, WhatIDoDivStyled, WhatIDoTextStyled } from "./styled/about";
 
 const BackgroudColorWrapper = styled.div`
   background-color: #EBF2FA;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 `
 
@@ -110,9 +110,17 @@ function App() {
               {resources.en.translation.whatIDo} <br/>
             </WhatIDoTextStyled>
             <WhatIDoContainerStyled>
-              <WhatIDoDivStyled>
-                Web Development
-              </WhatIDoDivStyled>
+              {
+              stacks.map((st) => 
+                <WhatIDoDivStyled color={st.color}>
+                  <StackIconStyled  src = {st.src} /> {" "}
+                  <StackTitleStyled>{st.title}</StackTitleStyled>
+                  <StackDetailsStyled>
+                    {st.details}
+                  </StackDetailsStyled>
+                </WhatIDoDivStyled>
+              )
+            }
             </WhatIDoContainerStyled>
           </DetailsContentStyled>
         </DetailsContainerStyled>

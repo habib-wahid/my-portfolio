@@ -39,9 +39,25 @@ export const WhatIDoContainerStyled = styled.div`
     margin: 15px 0;
 `
 export const WhatIDoDivStyled = styled.div`
-    background-color: #FFEBD1;
-    width: 40%;
-    height: 150px;
+    background-color: ${(props) => props.color};
+    width: 45%;
+    height: auto;
     border-radius: 10px;
     padding: 10px;
+    margin: 10px 0;
+`
+
+export const StackIconStyled = styled.img`
+    width: 17px;
+    height: 17px;
+`
+
+export const StackTitleStyled = styled.text`
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1;
+`
+
+export const StackDetailsStyled = styled.section`
+    opacity: .8;
 `
